@@ -1,0 +1,44 @@
+{
+    "name": "kamlesh/promotional",
+    "description": "A custom promotional module for Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "proprietary"
+    ],
+    "require": {
+        "php": "^8.1 || ^8.2 || ^8.3",
+        "magento/framework": "^103.0.0",
+        "barkamlesh/promotional": "1.0.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Kamlesh\\Promotional\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Kamlesh",
+            "email": "kamlesh@example.com"
+        }
+    ],
+    "support": {
+        "email": "support@example.com",
+        "issues": "https://github.com/yourusername/your-repo/issues"
+    },
+    "minimum-stability": "stable",
+    "keywords": [
+        "magento2",
+        "module",
+        "promotional"
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/barkamlesh/promotional.git"
+        }
+    ]
+}
