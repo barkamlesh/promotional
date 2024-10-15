@@ -27,9 +27,10 @@
     ],
     "support": {
         "email": "support@example.com",
-        "issues": "https://github.com/yourusername/your-repo/issues"
+        "issues": "https://github.com/barkamlesh/promotional/issues"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "keywords": [
         "magento2",
         "module",
