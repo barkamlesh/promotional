@@ -1,5 +1,5 @@
 {
-    "name": "kamlesh/promotional",
+    "name": "barkamlesh/promotional",
     "description": "A custom promotional module for Magento 2",
     "type": "magento2-module",
     "version": "1.0.0",
@@ -29,7 +29,7 @@
         "email": "support@example.com",
         "issues": "https://github.com/barkamlesh/promotional/issues"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "keywords": [
         "magento2",
