@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="promotional.product.exchange" type="topic" connection="amqp">
+        <binding id="promotional.product.exchange.promotional.product.queue" topic="promotional.product.save.after" destinationType="queue" destination="promotional.product.queue" />
+    </exchange>
+</config>

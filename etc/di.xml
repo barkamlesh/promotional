@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Add prefernce for PromotionalRepositoryInterface-->
+    <!-- <preference for="Kamlesh\Promotional\Api\PromotionalRepositoryInterface" type="Kamlesh\Promotional\Model\PromotionalRepository"/>    -->
+    
+    <type name="Kamlesh\Promotional\Ui\DataProvider\Promotional\ProductDataProvider">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">Kamlesh\Promotional\Model\ResourceModel\Promotional\CollectionFactory</argument>
+            <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
+        </arguments>
+    </type>
+
+    <type name="Kamlesh\Promotional\Ui\DataProvider\Promotional\ProductFormDataProvider">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">Kamlesh\Promotional\Model\ResourceModel\Promotional\CollectionFactory</argument>
+            <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
+        </arguments>
+    </type>
+
+    <!-- <type name="Magento\Framework\MessageQueue\Consumer\Config\ConsumerConfigItem\HandlerFactory">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="promotional.product.queue.consumer" xsi:type="string">Kamlesh\Promotional\Model\Consumer\ProcessPromotionalProduct</item>
+            </argument>
+        </arguments>
+    </type> -->
+
+    
+</config>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget_definition.xsd">
+    <widget id="promotional_products_widget" class="Kamlesh\Promotional\Block\Widget\PromotionalProducts" placeholder_image="">
+        <label translate="true">Promotional Products</label>
+        <description translate="true">Display a list of promotional products.</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" sort_order="10">
+                <label translate="true">Title</label>
+                <description translate="true">Enter the title for the promotional products widget.</description>
+            </parameter>
+            <!-- <parameter name="view_mode" xsi:type="select" sort_order="20">
+                <label translate="true">View Mode</label>
+                <description translate="true">Select the view mode for the promotional products.</description>
+                <options>
+                    <option name="grid" xsi:type="array">
+                        <item name="value" xsi:type="string">grid</item>
+                        <item name="label" xsi:type="string" translate="true">Grid</item>
+                    </option>
+                    <option name="list" xsi:type="array">
+                        <item name="value" xsi:type="string">list</item>
+                        <item name="label" xsi:type="string" translate="true">List</item>
+                    </option>
+                </options>
+            </parameter> -->
+        </parameters>
+    </widget>
+</widgets>

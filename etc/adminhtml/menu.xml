@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <menu>
+         <!-- Parent menu item with no link -->
+        <add id="Kamlesh_Promotional::promotional"
+             title="Promotional Products"
+             module="Kamlesh_Promotional"
+             sortOrder="10"
+             parent="Magento_Backend::marketing"
+             resource="Kamlesh_Promotional::promotional" />
+
+        <!-- Child menu item -->
+        <add id="Kamlesh_Promotional::product_list"
+             title="Product List"
+             module="Kamlesh_Promotional"
+             sortOrder="20"
+             parent="Kamlesh_Promotional::promotional"
+             action="promotional/product/index"
+             resource="Kamlesh_Promotional::product_list" />
+    </menu>
+</config>

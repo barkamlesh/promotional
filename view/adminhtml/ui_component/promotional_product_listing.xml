@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">promotional_product_listing.promotional_product_listing_data_source</item>
+            <item name="deps" xsi:type="string">promotional_product_listing.promotional_product_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">promotional_product_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="url" path="*/*/new">
+                    <param name="_current">false</param>
+                    <param name="_use_rewrite">true</param>
+                    <param name="_secure">true</param>
+                </item>
+            </item>
+            
+        </item>
+    </argument>
+    <dataSource name="promotional_product_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Kamlesh\Promotional\Ui\DataProvider\Promotional\ProductDataProvider</argument>
+            <argument name="name" xsi:type="string">promotional_product_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/promotional_product_listing/index"/>
+        </settings>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <!-- <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="selectProvider" xsi:type="string">promotional_product_listing.promotional_product_listing_data_source.promotional_product_columns.ids</item>
+                    <item name="indexField" xsi:type="string">selected</item>
+                </item>
+            </argument> -->
+            <argument name="data" xsi:type="array">
+                <item name="data" xsi:type="array">
+                    <item name="selectProvider" xsi:type="string">promotional_product_listing.promotional_product_listing_data_source.promotional_product_columns.ids</item>
+                    <item name="displayArea" xsi:type="string">bottom</item>
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <action name="mark_as_active">
+                <settings>
+                    <type>mark_as_active</type>
+                    <label translate="true">Mark as Active</label>
+                    <url path="promotional/product/massActivate"/>
+                    <confirm>
+                        <message translate="true">Are you sure you want to mark the selected items as active?</message>
+                    </confirm>
+                </settings>
+            </action>
+            <action name="mark_as_inactive">
+                <settings>
+                    <type>mark_as_inactive</type>
+                    <label translate="true">Mark as Inactive</label>
+                    <url path="promotional/product/massDeactivate"/>
+                    <confirm>
+                        <message translate="true">Are you sure you want to mark the selected items as inactive?</message>
+                    </confirm>
+                </settings>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="promotional_product_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        
+        <column name="entity_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <!-- <column name="product_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Product ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column> -->
+        <column name="sku">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">SKU</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="price">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Price</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Product Name</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="discount_percentage">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Discount Percentage</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="start_date">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Start Date</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="end_date">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">End Date</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+
+         <column name="status" class="Kamlesh\Promotional\Ui\Component\Listing\Column\StatusRenderer">
+            <settings>
+                <filter>select</filter>
+                <label translate="true">Status</label>
+                <options>
+                    <option name="active" xsi:type="array">
+                        <item name="value" xsi:type="number">1</item>
+                        <item name="label" xsi:type="string" translate="true">Active</item>
+                    </option>
+                    <option name="inactive" xsi:type="array">
+                        <item name="value" xsi:type="number">0</item>
+                        <item name="label" xsi:type="string" translate="true">Inactive</item>
+                    </option>
+                </options>
+            </settings>
+        </column>
+        <!-- <actionsColumn name="actions" class="Magento\Ui\Component\Listing\Columns\Column">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </actionsColumn> -->
+        <actionsColumn name="actions" class="Kamlesh\Promotional\Ui\Component\Listing\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">item_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+    
+</listing>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="promotional_product_indexer" view_id="promotional_product" class="Kamlesh\Promotional\Model\Indexer\PromotionalProductIndexer" primary="first">
+        <title>Promotional Product Indexer</title>
+        <description>Indexer for Promotional Products</description>
+        <saveHandler class="Magento\Elasticsearch\Model\Indexer\Handler"/>
+        <structure class="Magento\Elasticsearch\Model\Indexer\IndexStructure"/>
+    </indexer>
+</config>

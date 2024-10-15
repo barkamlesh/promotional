@@ -1,0 +1,28 @@
+<?php
+/** @var \Kamlesh\Promotional\Block\PromotionalList $block */
+$collection = $block->getCollection();
+$viewMode = $block->getViewMode();
+$title = $block->getTitle();
+?>
+
+<div class="promotional-products">
+    <h1><?php echo $title; ?></h1>
+    <div class="products-grid <?php echo $viewMode; ?>-view" id="products-container">
+        <?php foreach ($collection as $product): ?>
+            <div class="product-item">
+                <h2><?php echo $product->getName(); ?></h2>
+                <p><?php echo $product->getDescription(); ?></p>
+                <p>SKU: <?php echo $product->getSku(); ?></p>
+                <p>Price: <?php echo $product->getPrice(); ?></p>
+                <p>Discount: <?php echo $product->getDiscountPercentage(); ?>%</p>
+                <form action="<?php echo $block->getUrl('checkout/cart/add'); ?>" method="post">
+                    <input type="hidden" name="form_key" value="<?php echo $block->getFormKey(); ?>" />
+                    <input type="hidden" name="product" value="<?php echo $product->getProductId(); ?>" />
+                    <button type="submit" class="action primary" title="<?php echo __('Add to Cart'); ?>">
+                        <?php echo __('Add to Cart'); ?>
+                    </button>
+                </form>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
